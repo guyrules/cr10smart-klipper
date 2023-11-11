@@ -1,0 +1,58 @@
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /tmp/klippy_uds
+
+[file_manager]
+queue_gcode_uploads = False
+enable_object_processing = True
+
+[data_store]
+temperature_store_size = 600
+gcode_store_size = 1000
+
+[machine]
+provider = none
+validate_service = False
+validate_config = False
+
+[authorization]
+force_logins = True
+cors_domains = 
+	*.local
+	*.lan
+	*://app.fluidd.xyz
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+
+[octoprint_compat]
+
+[history]
+
+[update_manager]
+enable_auto_refresh = False
+
+[update_manager client fluidd]
+type = web
+repo = cadriel/fluidd
+path = ~/fluidd
+
+[timelapse]
+output_path = /mnt/UDISK/.crealityprint/video
+frame_path = /mnt/UDISK/.crealityprint/snapshot/
+ffmpeg_binary_path = /usr/bin/ffmpeg
+
+[update_manager Klipper-Adaptive-Meshing-Purging]
+type = git_repo
+channel = dev
+path = ~/Klipper-Adaptive-Meshing-Purging
+origin = https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
+managed_services = klipper
+primary_branch = main
+
